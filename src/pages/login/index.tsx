@@ -1,20 +1,21 @@
 //main
-import { FC } from "react";
-import "../../../globals.css";
+import { FC } from 'react';
+import '../../../globals.css';
 
 //Utilities
-import * as yup from "yup";
-import { useFormik } from "formik";
+import * as yup from 'yup';
+import { useFormik } from 'formik';
 
 //Components
-import Textfield from "../../components/Textfield";
-import Passwordfield from "../../components/PasswordField";
-import CustomButton from "../../components/CustomButton";
+import Textfield from '../../components/Textfield';
+import Passwordfield from '../../components/PasswordField';
+import CustomButton from '../../components/CustomButton';
 
 //assets
-import UserIcon from "../../../public/assets/auth/user.svg";
-import GoogleIcon from "../../../public/assets/auth/google.svg";
-import BusinessIcon from "../../../public/assets/auth/businessman.svg";
+import UserIcon from '../../../public/assets/auth/user.svg';
+import GoogleIcon from '../../../public/assets/auth/google.svg';
+import LoginAvatar from '../../../public/assets/auth/login-icon.svg';
+import Link from 'next/link';
 
 interface LogInForm {
   email: string;
@@ -22,18 +23,18 @@ interface LogInForm {
 }
 
 const logInSchema = yup.object().shape({
-  email: yup.string(),
-  password: yup.string(),
+  email: yup.string().email(),
+  password: yup.string().required(),
 });
 
-const login: FC = () => {
+const Login: FC = () => {
   const formik = useFormik<LogInForm>({
     initialValues: {
-      email: "",
-      password: "",
+      email: '',
+      password: '',
     },
     validationSchema: logInSchema,
-    onSubmit: (values) => {
+    onSubmit: values => {
       try {
         console.log(values);
       } catch (error) {
@@ -69,6 +70,9 @@ const login: FC = () => {
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
               />
+              {formik.errors.email && formik.touched.email && (
+                <p className="text-input-error text-sm">Email is not valid</p>
+              )}
 
               <div className="w-full lg:w-80 flex flex-col mt-5">
                 <label htmlFor="password" className="block mb-2 text-sm">
@@ -82,10 +86,15 @@ const login: FC = () => {
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
                 />
+                {formik.errors.password && formik.touched.password && (
+                  <p className="text-input-error text-sm">
+                    Password is required
+                  </p>
+                )}
 
-                <a href="" className="self-end">
+                <Link href="/password-recover" className="self-end">
                   Forgot password?
-                </a>
+                </Link>
               </div>
             </div>
 
@@ -100,18 +109,13 @@ const login: FC = () => {
             <button className="border-4 rounded-full p-3 active:border-monoc-cyan-700 hover:scale-105 focus-visible:scale-105 focus-visible:outline-0 ease-in duration-300 auth-google-button">
               <GoogleIcon className="google-icon" />
             </button>
-
-            <a href="/signup" className="flex justify-center mt-3">
-              <p>Don’t have account?</p>
-              <p className="font-semibold">&nbsp;Register now</p>
-            </a>
           </div>
         </div>
         <div className="hidden lg:flex w-1/2 justify-center items-end">
-          <BusinessIcon className="pl-4" />
+          <LoginAvatar className="pl-4" />
         </div>
       </div>
     </div>
   );
 };
-export default login;
+export default Login;
