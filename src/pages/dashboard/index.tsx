@@ -9,6 +9,7 @@ import Navbar from '@/components/navbar/Navbar';
 import UserIcon from '../../../public/assets/logo-words.svg';
 
 import React from 'react';
+import Menu from '@/components/menu/Menu';
 
 const Dashboard = () => {
   return (
@@ -16,6 +17,7 @@ const Dashboard = () => {
       <div className="w-full h-full flex">
         <div className="w-1/5 mt-6">
           <UserIcon className="ml-8" />
+          <Menu page="Dashboard" />
         </div>
         <div className="w-4/5 mt-6 bg-original-dark-blue ml-auto rounded-t-lg mr-8 pl-12">
           <Navbar
