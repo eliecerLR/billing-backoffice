@@ -24,7 +24,7 @@ const Navbar = (props: navbarProps) => {
           <UserCard name={name} imageUrl={imageUrl} />
         </div>
       </div>
-      <div className="mt-6">
+      <div className="mt-2">
         <p className="text-lg text-original-cyan">{`Welcome, ${name}!`}</p>
       </div>
     </div>

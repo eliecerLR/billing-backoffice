@@ -10,6 +10,7 @@ import UserIcon from '../../../public/assets/logo-words.svg';
 
 import React from 'react';
 import Menu from '@/components/menu/Menu';
+import DashboardCard from '@/components/dashboard/DashboardCard';
 
 const Dashboard = () => {
   return (
@@ -23,8 +24,26 @@ const Dashboard = () => {
           <Navbar
             name="Raulin Rosendo"
             navigation="Dashboard"
-            imageUrl="https://ui-avatars.com/api/?name=Rohn+Roe"
+            imageUrl="https://ui-avatars.com/api/?name=Raulin+Rosendo"
           />
+          <div className="flex h-2/5 mt-4">
+            <div className="w-1/5 flex flex-col justify-between">
+              <DashboardCard type="plans" amount="3" />
+              <DashboardCard type="users" amount="70" />
+              <DashboardCard type="companies" amount="200" />
+            </div>
+            <div
+              className="w-9/12 ml-8"
+              style={{ border: '1px solid red' }}
+            ></div>
+          </div>
+          <div className="mt-8 flex h-2/5">
+            <div className="w-9/12" style={{ border: '1px solid red' }}></div>
+            <div
+              className="w-1/5 ml-8"
+              style={{ border: '1px solid red' }}
+            ></div>
+          </div>
         </div>
       </div>
     </div>
