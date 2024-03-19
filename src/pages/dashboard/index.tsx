@@ -11,6 +11,26 @@ import UserIcon from '../../../public/assets/logo-words.svg';
 import React from 'react';
 import Menu from '@/components/menu/Menu';
 import DashboardCard from '@/components/dashboard/DashboardCard';
+import TierList from '@/components/dashboard/TierList';
+
+//mockups
+const tierListData = [
+  {
+    template: 'Aqua template',
+  },
+  {
+    template: 'Fire template',
+  },
+  {
+    template: 'Earth template',
+  },
+  {
+    template: 'Simple template',
+  },
+  {
+    template: 'Robot template',
+  },
+];
 
 const Dashboard = () => {
   return (
@@ -32,17 +52,13 @@ const Dashboard = () => {
               <DashboardCard type="users" amount="70" />
               <DashboardCard type="companies" amount="200" />
             </div>
-            <div
-              className="w-9/12 ml-8"
-              style={{ border: '1px solid red' }}
-            ></div>
+            <div className="w-9/12 ml-8 rounded-lg bg-dark-background"></div>
           </div>
           <div className="mt-8 flex h-2/5">
-            <div className="w-9/12" style={{ border: '1px solid red' }}></div>
-            <div
-              className="w-1/5 ml-8"
-              style={{ border: '1px solid red' }}
-            ></div>
+            <div className="w-9/12 rounded-lg bg-dark-background"></div>
+            <div className="w-1/5 ml-8 rounded-lg bg-dark-background">
+              <TierList data={tierListData} />
+            </div>
           </div>
         </div>
       </div>

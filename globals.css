@@ -52,3 +52,7 @@
     opacity: 1;
   }
 }
+
+.table-divider {
+  border-bottom: 1px solid #f6f6f6; /* Cambiar el color del divider a rojo */
+}
