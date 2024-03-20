@@ -31,6 +31,8 @@ const config: Config = {
       'original-bone': '#F6F6F6',
       'original-dark-blue': '#001C2E',
       'input-error': '#E75A5A',
+      'graph-bar': '#D1820D',
+      'graph-variant': '#8BD122',
       // light mode
       tremor: {
         brand: {
@@ -48,17 +50,17 @@ const config: Config = {
           emphasis: colors.gray[700],
         },
         border: {
-          DEFAULT: colors.gray[200],
+          DEFAULT: '#F6F6F6',
         },
         ring: {
           DEFAULT: colors.gray[200],
         },
         content: {
-          subtle: colors.gray[400],
-          DEFAULT: colors.gray[500],
-          emphasis: colors.gray[700],
-          strong: colors.gray[900],
-          inverted: colors.white,
+          subtle: '#F6F6F6',
+          DEFAULT: '#F6F6F6',
+          emphasis: '#F6F6F6',
+          strong: '#F6F6F6',
+          inverted: '#F6F6F6',
         },
       },
       // dark mode
@@ -73,22 +75,22 @@ const config: Config = {
         },
         background: {
           muted: '#131A2B',
-          subtle: colors.gray[800],
+          subtle: colors.red,
           DEFAULT: colors.gray[900],
           emphasis: colors.gray[300],
         },
         border: {
-          DEFAULT: colors.gray[800],
+          DEFAULT: '#ffffff30',
         },
         ring: {
           DEFAULT: colors.gray[800],
         },
         content: {
-          subtle: colors.gray[600],
-          DEFAULT: colors.gray[500],
-          emphasis: colors.gray[200],
-          strong: colors.gray[50],
-          inverted: colors.gray[950],
+          subtle: '#F6F6F6',
+          DEFAULT: '#F6F6F6',
+          emphasis: '#F6F6F6',
+          strong: '#F6F6F6',
+          inverted: '#F6F6F6',
         },
       },
     },
