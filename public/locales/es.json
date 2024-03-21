@@ -1,0 +1,11 @@
+{
+  "locale": "es",
+  "Menu": {
+    "Menu": "Menú",
+    "Dashboard": "Estadísticas",
+    "Users": "Usuarios",
+    "Companies": "Compañías",
+    "Templates": "Plantillas",
+    "Plans": "Planes"
+  }
+}

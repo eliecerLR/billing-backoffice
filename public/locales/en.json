@@ -1,0 +1,11 @@
+{
+  "locale": "en",
+  "Menu": {
+    "Menu": "Menu",
+    "Dashboard": "Dashboard",
+    "Users": "Users",
+    "Companies": "Companies",
+    "Templates": "Templates",
+    "Plans": "Plans"
+  }
+}

@@ -1,18 +1,19 @@
 //main
-import { FC, useState } from 'react';
+import React, { FC, useState } from 'react';
 import '../../../globals.css';
 
 //components
 import Navbar from '@/components/navbar/Navbar';
-
-//assets
-import UserIcon from '../../../public/assets/logo-words.svg';
-
-import React from 'react';
 import Menu from '@/components/menu/Menu';
 import DashboardCard from '@/components/dashboard/DashboardCard';
 import TierList from '@/components/dashboard/TierList';
 import AreaGraph from '@/components/dashboard/graphs/AreaGraph';
+
+//assets
+import UserIcon from '../../../public/assets/logo-words.svg';
+
+//utilities
+import { useTranslation } from 'react-i18next';
 
 //mockups
 const tierListData = [
@@ -160,6 +161,7 @@ const SubsData = [
 ];
 
 const Dashboard = () => {
+  const { t } = useTranslation();
   return (
     <div className="h-screen bg-dark-background text-original-bone font-custom overflow-auto">
       <div className="w-full h-full flex">
@@ -170,7 +172,7 @@ const Dashboard = () => {
         <div className="w-4/5 mt-6 bg-original-dark-blue ml-auto rounded-t-lg mr-8 pl-12">
           <Navbar
             name="Raulin Rosendo"
-            navigation="Dashboard"
+            navigation={t('Menu.Dashboard')}
             imageUrl="https://ui-avatars.com/api/?name=Raulin+Rosendo"
           />
           <div className="flex h-2/5 mt-4">
