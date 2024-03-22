@@ -8,6 +8,9 @@ import CompaniesIcon from '../../../public/assets/menuIcons/companies-icon.svg';
 import { RiExpandDiagonalFill } from '@remixicon/react';
 import { white } from 'tailwindcss/colors';
 
+//utilities
+import { useTranslation } from 'react-i18next';
+
 interface Props {
   type: keyof typeof IconList;
   amount: string;
@@ -25,14 +28,9 @@ const cardBackground = {
   companies: 'linear-gradient(90deg, #50697B 0%, #5FBDFF 104.94%)',
 };
 
-const cardText = {
-  users: 'Total Users',
-  plans: 'Active Plans',
-  companies: 'Total Companies',
-};
-
 const DashboardCard = (props: Props) => {
   const { type, amount } = props;
+  const { t } = useTranslation();
 
   return (
     <div
@@ -44,7 +42,7 @@ const DashboardCard = (props: Props) => {
       <div className="flex justify-between">
         <div className="flex items-center">
           <span className="">{IconList[type]}</span>
-          <p className="text-xl ml-3">{cardText[type]}</p>
+          <p className="text-xl ml-3">{t(`Dashboard.${type}`)}</p>
         </div>
         <div className="flex items-center">
           <RiExpandDiagonalFill

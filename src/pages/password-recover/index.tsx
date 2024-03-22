@@ -6,6 +6,7 @@ import '../../../globals.css';
 import * as yup from 'yup';
 import { useFormik } from 'formik';
 import { useRouter } from 'next/router';
+import { useTranslation } from 'react-i18next';
 
 //Components
 import Textfield from '../../components/Textfield';
@@ -24,6 +25,7 @@ const passwordRecoverSchema = yup.object().shape({
 });
 
 const PasswordRecover: FC = () => {
+  const { t } = useTranslation();
   const router = useRouter();
   const [showNextStep, setShowNextStep] = useState(false);
   const formik = useFormik<passwordRecoverForm>({
@@ -59,17 +61,16 @@ const PasswordRecover: FC = () => {
             <div className="flex flex-col items-center gap-5 pb-8">
               <PasswordIcon />
               <h1 className="text-3xl font-semibold text-center">
-                Password Reset
+                {t('Auth.passwordReset')}
               </h1>
 
               {showNextStep ? (
                 <p className="text-xl mt-2 text-center">
-                  If the email you entered matches one of our users, you will
-                  soon receive a message with the steps to follow.
+                  {t('Auth.matchDialog')}
                 </p>
               ) : (
                 <p className="text-xl mt-2 text-center">
-                  You will receive instructions to reset your password
+                  {t('Auth.sendDialog')}
                 </p>
               )}
             </div>
@@ -77,7 +78,7 @@ const PasswordRecover: FC = () => {
             {!showNextStep && (
               <div className="w-full lg:w-80 flex flex-col">
                 <label htmlFor="email" className="block mb-2 text-sm">
-                  Email address
+                  {t('Auth.email')}
                 </label>
 
                 <Textfield
@@ -96,12 +97,14 @@ const PasswordRecover: FC = () => {
             )}
             {showNextStep ? (
               <div className="w-full flex justify-center pt-10">
-                <CustomButton onClick={handleGoBack}>Go to Login</CustomButton>
+                <CustomButton onClick={handleGoBack}>
+                  {t('Auth.redirectButton')}
+                </CustomButton>
               </div>
             ) : (
               <div className="w-full flex justify-center pt-10">
                 <CustomButton type="submit" disabled={!formik.values.email}>
-                  Send
+                  {t('Auth.send')}
                 </CustomButton>
               </div>
             )}

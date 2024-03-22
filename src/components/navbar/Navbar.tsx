@@ -3,6 +3,9 @@ import React from 'react';
 import { FC, useState } from 'react';
 import '../../../globals.css';
 
+//utilities
+import { useTranslation } from 'react-i18next';
+
 //components
 import UserCard from './UserCard';
 
@@ -14,6 +17,7 @@ interface navbarProps {
 
 const Navbar = (props: navbarProps) => {
   const { name, navigation, imageUrl } = props;
+  const { t } = useTranslation();
   return (
     <div className=" text-original-bone font-custom overflow-auto">
       <div className="flex">
@@ -25,7 +29,9 @@ const Navbar = (props: navbarProps) => {
         </div>
       </div>
       <div className="mt-2">
-        <p className="text-lg text-original-cyan">{`Welcome, ${name}!`}</p>
+        <p className="text-lg text-original-cyan">
+          {`${t('Navbar.Welcome')}, ${name}!`}
+        </p>
       </div>
     </div>
   );

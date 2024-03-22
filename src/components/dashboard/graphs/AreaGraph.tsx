@@ -6,37 +6,34 @@ import colors from 'tailwindcss/colors';
 import PlansIcon from '../../../../public/assets/menuIcons/plans-icon.svg';
 import TemplatesIcon from '../../../../public/assets/menuIcons/templates-icon.svg';
 import { RiExpandDiagonalFill } from '@remixicon/react';
-import classNames from 'classnames';
+
+//utilities
+import { useTranslation } from 'react-i18next';
 
 interface BillData {
   date: string;
   Downloads: number;
 }
 
-interface SubsData {
+interface subsData {
   date: string;
-  Subs: number;
+  subs: number;
 }
 
 interface Props {
   type: keyof typeof IconList;
-  data: (BillData | SubsData)[];
+  data: (BillData | subsData)[];
   customClasses: string;
 }
 
 const IconList = {
   bills: <TemplatesIcon />,
-  Subs: <PlansIcon />,
-};
-
-const barsColor = {
-  bills: 'text-graph-bar',
-  Subs: 'text-graph-variant',
+  subs: <PlansIcon />,
 };
 
 const cardText = {
   bills: 'Total Bills',
-  Subs: 'Total memberships',
+  subs: 'Total memberships',
 };
 
 const customTooltip = ({ payload, active }: CustomTooltipProps) => {
@@ -65,6 +62,8 @@ const customTooltip = ({ payload, active }: CustomTooltipProps) => {
 
 const AreaGraph = (props: Props) => {
   const { type, data, customClasses } = props;
+  const { t } = useTranslation();
+
   let color = `mx-1 h-72 ${customClasses}`;
   useEffect(() => {
     console.log(color);
@@ -74,7 +73,7 @@ const AreaGraph = (props: Props) => {
       <div className="flex justify-between">
         <div className="flex items-center">
           <span className="">{IconList[type]}</span>
-          <p className="text-xl ml-3">{cardText[type]}</p>
+          <p className="text-xl ml-3">{t(`Dashboard.${type}`)}</p>
         </div>
         <div className="flex items-center">
           <RiExpandDiagonalFill
@@ -88,7 +87,7 @@ const AreaGraph = (props: Props) => {
         className={color}
         data={data}
         index="date"
-        categories={type === 'bills' ? ['Downloads'] : ['Subs']}
+        categories={type === 'bills' ? ['Downloads'] : ['subs']}
         yAxisWidth={39}
         customTooltip={customTooltip}
         showAnimation={true}

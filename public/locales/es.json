@@ -7,5 +7,29 @@
     "Companies": "Compañías",
     "Templates": "Plantillas",
     "Plans": "Planes"
+  },
+  "Navbar": {
+    "Welcome": "Bienvenido"
+  },
+  "Dashboard": {
+    "subs": "Suscripciones Totales",
+    "bills": "Facturas Totales",
+    "templates": "Plantillas más usadas",
+    "plans": "Planes Activos",
+    "users": "Usuarios Totales",
+    "companies": "Empresas Registradas"
+  },
+  "Auth": {
+    "welcome": "Bienvenido",
+    "email": "Correo Electrónico",
+    "password": "Contraseña",
+    "forgotPassword": "¿Olvidaste tu Contraseña?",
+    "login": "Iniciar sesión",
+    "or": "o",
+    "passwordReset": "Restablecer Contraseña",
+    "matchDialog": "Si tu correo electrónico es válido, recibirás información con los pasos a seguir.",
+    "sendDialog": "Recibirás información para reestablecer tu contraseña.",
+    "redirectButton": "Ir al inicio",
+    "send": "Enviar"
   }
 }

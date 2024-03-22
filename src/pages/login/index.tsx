@@ -5,6 +5,7 @@ import '../../../globals.css';
 //Utilities
 import * as yup from 'yup';
 import { useFormik } from 'formik';
+import { useTranslation } from 'react-i18next';
 
 //Components
 import Textfield from '../../components/Textfield';
@@ -28,6 +29,7 @@ const logInSchema = yup.object().shape({
 });
 
 const Login: FC = () => {
+  const { t } = useTranslation();
   const formik = useFormik<LogInForm>({
     initialValues: {
       email: '',
@@ -54,12 +56,14 @@ const Login: FC = () => {
           >
             <div className="flex flex-col items-center gap-5 pb-8">
               <UserIcon />
-              <h1 className="text-3xl font-semibold text-center">Welcome</h1>
+              <h1 className="text-3xl font-semibold text-center">
+                {t('Auth.welcome')}
+              </h1>
             </div>
 
             <div className="w-full lg:w-80 flex flex-col">
               <label htmlFor="email" className="block mb-2 text-sm">
-                Email address
+                {t('Auth.email')}
               </label>
 
               <Textfield
@@ -76,7 +80,7 @@ const Login: FC = () => {
 
               <div className="w-full lg:w-80 flex flex-col mt-5">
                 <label htmlFor="password" className="block mb-2 text-sm">
-                  Password
+                  {t('Auth.password')}
                 </label>
 
                 <Passwordfield
@@ -93,18 +97,18 @@ const Login: FC = () => {
                 )}
 
                 <Link href="/password-recover" className="self-end">
-                  Forgot password?
+                  {t('Auth.forgotPassword')}
                 </Link>
               </div>
             </div>
 
             <div className="w-full flex justify-center pt-10">
-              <CustomButton type="submit">Login</CustomButton>
+              <CustomButton type="submit">{t('Auth.login')}</CustomButton>
             </div>
           </form>
 
           <div className="flex flex-col w-full items-center mt-6 gap-5">
-            <span className="text-base">Or</span>
+            <span className="text-base">{t('Auth.or')}</span>
 
             <button className="border-4 rounded-full p-3 active:border-monoc-cyan-700 hover:scale-105 focus-visible:scale-105 focus-visible:outline-0 ease-in duration-300 auth-google-button">
               <GoogleIcon className="google-icon" />

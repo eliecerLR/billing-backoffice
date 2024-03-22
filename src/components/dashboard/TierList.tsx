@@ -6,6 +6,7 @@ import { white } from 'tailwindcss/colors';
 
 //icons
 import { RiBardFill, RiExpandDiagonalFill } from '@remixicon/react';
+import { useTranslation } from 'react-i18next';
 
 //interfaces
 interface TemplateObject {
@@ -18,6 +19,7 @@ interface Props {
 
 const TierList = (props: Props) => {
   const { data } = props;
+  const { t } = useTranslation();
   return (
     <div>
       <div className="flex mt-4 justify-between">
@@ -25,7 +27,7 @@ const TierList = (props: Props) => {
           <span className="ml-3">
             <RiBardFill size={20} color={white} className="text-end" />
           </span>
-          <p className="text-xl ml-1">Top Templates</p>
+          <p className="text-xl ml-1">{t('Dashboard.templates')}</p>
         </div>
         <div className="flex items-center">
           <RiExpandDiagonalFill

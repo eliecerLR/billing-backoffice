@@ -97,66 +97,66 @@ const billsData = [
   },
 ];
 
-const SubsData = [
+const subsData = [
   {
     date: 'Jan 23',
-    Subs: 607,
+    subs: 607,
   },
   {
     date: 'Feb 23',
-    Subs: 125,
+    subs: 125,
   },
   {
     date: 'Mar 23',
-    Subs: 1856,
+    subs: 1856,
   },
   {
     date: 'Apr 23',
-    Subs: 765,
+    subs: 765,
   },
   {
     date: 'May 23',
-    Subs: 53,
+    subs: 53,
   },
   {
     date: 'Jun 23',
-    Subs: 400,
+    subs: 400,
   },
   {
     date: 'Jul 23',
-    Subs: 350,
+    subs: 350,
   },
   {
     date: 'Aug 23',
-    Subs: 908,
+    subs: 908,
   },
   {
     date: 'Sep 23',
-    Subs: 250,
+    subs: 250,
   },
   {
     date: 'Oct 23',
-    Subs: 167,
+    subs: 167,
   },
   {
     date: 'Nov 23',
-    Subs: 670,
+    subs: 670,
   },
   {
     date: 'Dec 23',
-    Subs: 607,
+    subs: 607,
   },
   {
     date: 'Jan 24',
-    Subs: 120,
+    subs: 120,
   },
   {
     date: 'Feb 24',
-    Subs: 734,
+    subs: 734,
   },
   {
     date: 'Mar 24',
-    Subs: 320,
+    subs: 320,
   },
 ];
 
@@ -194,8 +194,8 @@ const Dashboard = () => {
             <div className="w-9/12 rounded-lg bg-dark-background">
               <AreaGraph
                 key="subs-graph"
-                type="Subs"
-                data={SubsData}
+                type="subs"
+                data={subsData}
                 customClasses="text-graph-bar"
               />
             </div>

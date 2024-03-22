@@ -7,5 +7,29 @@
     "Companies": "Companies",
     "Templates": "Templates",
     "Plans": "Plans"
+  },
+  "Navbar": {
+    "Welcome": "Welcome"
+  },
+  "Dashboard": {
+    "subs": "Total Memberships",
+    "bills": "Total Bills",
+    "templates": "Top Templates",
+    "plans": "Active Plans",
+    "users": "Total Users",
+    "companies": "Total Companies"
+  },
+  "Auth": {
+    "welcome": "Welcome",
+    "email": "Email Address",
+    "password": "Password",
+    "forgotPassword": "Forgot password?",
+    "login": "Login",
+    "or": "Or",
+    "passwordReset": "Password Reset",
+    "matchDialog": "If the email you entered matches one of our users, you will soon receive a message with the steps to follow.",
+    "sendDialog": "You will receive instructions to reset your password",
+    "redirectButton": "Go to Login",
+    "send": "Send"
   }
 }
